@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>HOMOLOGACIONES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div>Select an option:</div>
+        <br/>
+        <h:form>
+            <h:commandButton id="customer" value="Customer" action="#{homologacionesMBean.showCustomerList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="administrador" value="Administrador" action="#{homologacionesMBean.showAdministradorList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="comiteAsuntosEstudiantiles" value="ComiteAsuntosEstudiantiles" action="#{homologacionesMBean.showComiteAsuntosEstudiantilesList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="estudiante" value="Estudiante" action="#{homologacionesMBean.showEstudianteList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="jefe" value="Jefe" action="#{homologacionesMBean.showJefeList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="materia" value="Materia" action="#{homologacionesMBean.showMateriaList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="pensum" value="Pensum" action="#{homologacionesMBean.showPensumList()}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="profesor" value="Profesor" action="#{homologacionesMBean.showProfesorList()}"/>
+        </h:form>
+    </body>
+</html>
