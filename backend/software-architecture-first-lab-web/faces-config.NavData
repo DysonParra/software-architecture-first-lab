@@ -19,6 +19,10 @@
         <Node id="PensumDetails.xhtml" x="86" y="300" zoom="true"/>
         <Node id="ProfesorList.xhtml" x="414" y="238" zoom="true"/>
         <Node id="ProfesorDetails.xhtml" x="86" y="300" zoom="true"/>
+        <Node id="HomologationsList.xhtml" x="414" y="238" zoom="true"/>
+        <Node id="HomologationsDetails.xhtml" x="86" y="300" zoom="true"/>
+        <Node id="UsersList.xhtml" x="414" y="238" zoom="true"/>
+        <Node id="UsersDetails.xhtml" x="86" y="300" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

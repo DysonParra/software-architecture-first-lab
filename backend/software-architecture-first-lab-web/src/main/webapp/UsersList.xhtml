@@ -22,9 +22,9 @@
     <h:body>
         <f:view>
             <h:form>
-                <h1><h:outputText value="HOMOLOGATIONS LIST"/></h1>
+                <h1><h:outputText value="USERS LIST"/></h1>
                 <h:commandButton id="back" value="Back" action="#{homologacionesMBean.showIndex()}"/>
-                <p:dataTable value="#{homologacionesMBean.homologationsList}" var="item"
+                <p:dataTable value="#{homologacionesMBean.usersList}" var="item"
                              paginator="true"
                              rows="3"
                              scrollable="true"
@@ -34,30 +34,30 @@
                              resizableColumns="true"
                              sortMode="true"
                              emptyMessage="No hay datos"
-                             widgetVar="homologationsTable"
+                             widgetVar="usersTable"
                              >
                     
-                    <p:column headerText="Id"
-                              sortBy="#{item.id}"
-                              filterBy="#{item.id}"
+                    <p:column headerText="Email"
+                              sortBy="#{item.email}"
+                              filterBy="#{item.email}"
                               filterMatchMode="contains"
                               >
-                        <h:commandLink action="#{homologacionesMBean.showHomologationsDetails(item)}"
-                                      value="#{item.id}" />
+                        <h:commandLink action="#{homologacionesMBean.showUsersDetails(item)}"
+                                      value="#{item.email}" />
                                       
                     </p:column>
                     
-                    <!-- <p:column headerText="Qr Code">
-                        <p:barcode value="#{item.id} #{item.title}"
+                    <p:column headerText="Qr Code">
+                        <p:barcode value="#{item.email} #{item.password}"
                                    type="qr" height="110px" width="110px" />
-                    </p:column>                -->
+                    </p:column>               
                         
                     
                     <p:column>
                         <f:facet name="header">
-                            <h:outputText value="title"/>
+                            <h:outputText value="Password"/>
                         </f:facet>
-                        <h:outputText value="#{item.title}"/>
+                        <h:outputText value="#{item.password}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>

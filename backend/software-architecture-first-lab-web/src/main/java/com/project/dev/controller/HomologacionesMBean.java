@@ -13,6 +13,8 @@ import com.project.dev.domain.Jefe;
 import com.project.dev.domain.Materia;
 import com.project.dev.domain.Pensum;
 import com.project.dev.domain.Profesor;
+import com.project.dev.domain.Homologations;
+import com.project.dev.domain.Users;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -40,6 +42,10 @@ public class HomologacionesMBean implements Serializable {
     private com.project.dev.ejb.PensumManagerLocal pensumManager;
     @EJB
     private com.project.dev.ejb.ProfesorManagerLocal profesorManager;
+    @EJB
+    private com.project.dev.ejb.HomologationsManagerLocal homologationsManager;
+    @EJB
+    private com.project.dev.ejb.UsersManagerLocal usersManager;
 
     // Model properties:
     // For update in form and view data in dynamic table.
@@ -73,6 +79,14 @@ public class HomologacionesMBean implements Serializable {
     // For update in form and view data in dynamic table.
     private Profesor profesor;
     private List<Profesor> profesorList;
+
+    // For update in form and view data in dynamic table.
+    private Homologations homologations;
+    private List<Homologations> homologationsList;
+
+    // For update in form and view data in dynamic table.
+    private Users users;
+    private List<Users> usersList;
 
     /**
      * Creates a new instance of HomologacionesMBean
@@ -551,6 +565,122 @@ public class HomologacionesMBean implements Serializable {
     public String updateProfesor() {
         profesor = profesorManager.update(profesor);
         return "PROFESOR SAVED";
+    }
+
+    /**
+     * Get homologations list and add to data table JSF.
+     *
+     * @return
+     */
+    public List<Homologations> getHomologationsList() {
+        if (homologationsList == null || homologationsList.isEmpty())
+            refreshHomologations();
+        return homologationsList;
+    }
+
+    /**
+     * Get detail of each homologations on the form.
+     *
+     * @return
+     */
+    public Homologations getHomologationsDetails() {
+        return homologations;
+    }
+
+    /**
+     * Action handler
+     *
+     * @return homologations list.
+     */
+    public String showHomologationsList() {
+        return "HOMOLOGATIONS LIST";
+    }
+
+    /**
+     * Action handler called when a row of the table is clicked on the id.
+     *
+     * @param homologations
+     * @return
+     */
+    public String showHomologationsDetails(Homologations homologations) {
+        this.homologations = homologations;
+        return "HOMOLOGATIONS DETAILS";
+    }
+
+    /**
+     * Action handler that updates homologations list on view.
+     */
+    public void refreshHomologations() {
+        homologationsList = homologationsManager.getAllEntities();
+    }
+
+    /**
+     * Action handler that updates the homologations model on the database. Called
+     * when update button is clicked.
+     *
+     * @return homologations list.
+     */
+    public String updateHomologations() {
+        homologations = homologationsManager.update(homologations);
+        return "HOMOLOGATIONS SAVED";
+    }
+
+    /**
+     * Get users list and add to data table JSF.
+     *
+     * @return
+     */
+    public List<Users> getUsersList() {
+        if (usersList == null || usersList.isEmpty())
+            refreshUsers();
+        return usersList;
+    }
+
+    /**
+     * Get detail of each users on the form.
+     *
+     * @return
+     */
+    public Users getUsersDetails() {
+        return users;
+    }
+
+    /**
+     * Action handler
+     *
+     * @return users list.
+     */
+    public String showUsersList() {
+        return "USERS LIST";
+    }
+
+    /**
+     * Action handler called when a row of the table is clicked on the id.
+     *
+     * @param users
+     * @return
+     */
+    public String showUsersDetails(Users users) {
+        this.users = users;
+        return "USERS DETAILS";
+    }
+
+    /**
+     * Action handler that updates users list on view.
+     */
+    public void refreshUsers() {
+        usersList = usersManager.getAllEntities();
+    }
+
+    /**
+     * Action handler that updates the users model on the database. Called
+     * when update button is clicked.
+     *
+     * @return users list.
+     */
+    public String updateUsers() {
+        users = usersManager.update(users);
+        return "USERS SAVED";
     }
 
 }

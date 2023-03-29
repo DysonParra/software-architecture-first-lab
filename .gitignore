@@ -52,6 +52,7 @@ out/
 .vscode/
 
 # dependencies
+/.angular
 /node_modules
 /.pnp
 .pnp.js

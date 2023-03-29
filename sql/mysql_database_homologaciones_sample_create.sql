@@ -2,9 +2,17 @@
 CREATE DATABASE IF NOT EXISTS `sample`;
 USE `sample`;
 
-CREATE TABLE IF NOT EXISTS `materia` (
-	`id`								BIGINT				NOT NULL PRIMARY KEY,
-	`value`								VARCHAR(255)			NULL DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `users` (
+	`email`							VARCHAR(255)		NOT NULL PRIMARY KEY,
+	`password`						VARCHAR(255)			NULL DEFAULT NULL
+); 
+
+CREATE TABLE IF NOT EXISTS `homologations` (
+	`id`							BIGINT				NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`title`							VARCHAR(50)				NULL DEFAULT NULL,
+	`student`						VARCHAR(100)			NULL DEFAULT NULL,
+	`justification`					VARCHAR(255)			NULL DEFAULT NULL,
+	`status`						VARCHAR(20)				NULL DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `estudiante` (

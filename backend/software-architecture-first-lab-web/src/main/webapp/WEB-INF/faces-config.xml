@@ -58,14 +58,27 @@
             <to-view-id>/PensumList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-        <navigation-rule>
+    <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>PROFESOR LIST</from-outcome>
             <to-view-id>/ProfesorList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>HOMOLOGATIONS LIST</from-outcome>
+            <to-view-id>/HomologationsList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>USERS LIST</from-outcome>
+            <to-view-id>/UsersList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 
 
     <navigation-rule>
@@ -230,10 +243,10 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>/ProfesorList.xhtml</from-view-id>
+        <from-view-id>/HomologationsList.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>PROFESOR DETAILS</from-outcome>
-            <to-view-id>/ProfesorDetails.xhtml</to-view-id>
+            <from-outcome>HOMOLOGATIONS DETAILS</from-outcome>
+            <to-view-id>/HomologationsDetails.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>INDEX</from-outcome>
@@ -241,14 +254,37 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/ProfesorDetails.xhtml</from-view-id>
+        <from-view-id>/HomologationsDetails.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>PROFESOR SAVED</from-outcome>
-            <to-view-id>/ProfesorList.xhtml</to-view-id>
+            <from-outcome>HOMOLOGATIONS SAVED</from-outcome>
+            <to-view-id>/HomologationsList.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>PROFESOR LIST</from-outcome>
-            <to-view-id>/ProfesorList.xhtml</to-view-id>
+            <from-outcome>HOMOLOGATIONS LIST</from-outcome>
+            <to-view-id>/HomologationsList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/UsersList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>USERS DETAILS</from-outcome>
+            <to-view-id>/UsersDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>INDEX</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/UsersDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>USERS SAVED</from-outcome>
+            <to-view-id>/UsersList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>USERS LIST</from-outcome>
+            <to-view-id>/UsersList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

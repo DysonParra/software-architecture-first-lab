@@ -7,73 +7,63 @@
     <h:head>
         <title>My Form</title>
         <h:outputStylesheet library="Styles" name="Styles.css"/>
-        <style>
-            body {
+    <style>
+    /* Set default font styles */
+        body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            }
+            font-size: 14px;
+            line-height: 1.5;
+        }
 
-            h1 {
-            margin-top: 0;
-            font-size: 2em;
-            }
-
-            /* Form styles */
-            .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .form-container label {
-            display: inline-block;
-            width: 100px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            }
-
-            .form-container input[type="text"],
-            .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
+    /* Style the form heading */
+        h1 {
+            font-size: 24px;
             margin-bottom: 20px;
-            font-size: 1em;
-            }
+        }
 
-            .form-container input[type="submit"] {
+        /* Style the form labels and input fields */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        /* Style the form buttons */
+        button,
+        input[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 1.2em;
-            margin-top: 20px;
-            }
+            margin-right: 10px;
+        }
 
-            .form-container input[type="submit"]:hover {
+        button:hover,
+        input[type="submit"]:hover {
             background-color: #3e8e41;
-            }
+        }
 
-            .form-container .error-message {
-            color: #d9534f;
+        /* Style the form error messages */
+        .error {
+            color: red;
             margin-top: 5px;
-            }
-
-            .form-container .success-message {
-            color: #5cb85c;
-            margin-top: 5px;
-            }
-        </style>
+            font-size: 12px;
+        }
+    </style>
     </h:head>
     <h:body>
         <h1>HOMOLOGATIONS DETAILS</h1>
