@@ -29,18 +29,21 @@ import lombok.Data;
 @NamedQueries({
     @NamedQuery(name = "ComiteAsuntosEstudiantiles.findAll", query = "SELECT c FROM ComiteAsuntosEstudiantiles c")
     , @NamedQuery(name = "ComiteAsuntosEstudiantiles.findById", query = "SELECT c FROM ComiteAsuntosEstudiantiles c WHERE c.id = :id")
-    , @NamedQuery(name = "ComiteAsuntosEstudiantiles.findByValue", query = "SELECT c FROM ComiteAsuntosEstudiantiles c WHERE c.value = :value")})
+    , @NamedQuery(name = "ComiteAsuntosEstudiantiles.findByCorreoInstitucional", query = "SELECT c FROM ComiteAsuntosEstudiantiles c WHERE c.correoInstitucional = :correoInstitucional")
+    , @NamedQuery(name = "ComiteAsuntosEstudiantiles.findByTelefono", query = "SELECT c FROM ComiteAsuntosEstudiantiles c WHERE c.telefono = :telefono")})
 public class ComiteAsuntosEstudiantiles implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
     @Size(max = 255)
-    @Column(name = "value", length = 255)
-    private String value;
+    @Column(name = "correo_institucional")
+    private String correoInstitucional;
+    @Column(name = "telefono")
+    private Long telefono;
 
     public ComiteAsuntosEstudiantiles() {
     }

@@ -28,25 +28,34 @@ import lombok.Data;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Materia.findAll", query = "SELECT m FROM Materia m")
-    , @NamedQuery(name = "Materia.findById", query = "SELECT m FROM Materia m WHERE m.id = :id")
-    , @NamedQuery(name = "Materia.findByValue", query = "SELECT m FROM Materia m WHERE m.value = :value")})
+    , @NamedQuery(name = "Materia.findByCodigo", query = "SELECT m FROM Materia m WHERE m.codigo = :codigo")
+    , @NamedQuery(name = "Materia.findByCantidadCreditos", query = "SELECT m FROM Materia m WHERE m.cantidadCreditos = :cantidadCreditos")
+    , @NamedQuery(name = "Materia.findByNombre", query = "SELECT m FROM Materia m WHERE m.nombre = :nombre")
+    , @NamedQuery(name = "Materia.findByPrerequisito", query = "SELECT m FROM Materia m WHERE m.prerequisito = :prerequisito")
+    , @NamedQuery(name = "Materia.findByCorrequisito", query = "SELECT m FROM Materia m WHERE m.correquisito = :correquisito")})
 public class Materia implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "codigo")
+    private Long codigo;
+    @Column(name = "cantidad_creditos")
+    private Long cantidadCreditos;
     @Size(max = 255)
-    @Column(name = "value", length = 255)
-    private String value;
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "prerequisito")
+    private Long prerequisito;
+    @Column(name = "correquisito")
+    private Long correquisito;
 
     public Materia() {
     }
 
-    public Materia(Long id) {
-        this.id = id;
+    public Materia(Long codigo) {
+        this.codigo = codigo;
     }
-    
+
 }

@@ -9,6 +9,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -27,18 +29,18 @@ import lombok.Data;
 @Table(name = "solicitudes")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Solicitudes.findAll", query = "SELECT h FROM Solicitudes h")
-    , @NamedQuery(name = "Solicitudes.findById", query = "SELECT h FROM Solicitudes h WHERE h.id = :id")
-    , @NamedQuery(name = "Solicitudes.findByTitle", query = "SELECT h FROM Solicitudes h WHERE h.title = :title")
-    , @NamedQuery(name = "Solicitudes.findByStudent", query = "SELECT h FROM Solicitudes h WHERE h.student = :student")
-    , @NamedQuery(name = "Solicitudes.findByJustification", query = "SELECT h FROM Solicitudes h WHERE h.justification = :justification")
-    , @NamedQuery(name = "Solicitudes.findByStatus", query = "SELECT h FROM Solicitudes h WHERE h.status = :status")})
+    @NamedQuery(name = "Solicitudes.findAll", query = "SELECT s FROM Solicitudes s")
+    , @NamedQuery(name = "Solicitudes.findById", query = "SELECT s FROM Solicitudes s WHERE s.id = :id")
+    , @NamedQuery(name = "Solicitudes.findByTitle", query = "SELECT s FROM Solicitudes s WHERE s.title = :title")
+    , @NamedQuery(name = "Solicitudes.findByStudent", query = "SELECT s FROM Solicitudes s WHERE s.student = :student")
+    , @NamedQuery(name = "Solicitudes.findByJustification", query = "SELECT s FROM Solicitudes s WHERE s.justification = :justification")
+    , @NamedQuery(name = "Solicitudes.findByStatus", query = "SELECT s FROM Solicitudes s WHERE s.status = :status")})
 public class Solicitudes implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "id")
     private Long id;
     @Size(max = 50)

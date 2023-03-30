@@ -28,25 +28,28 @@ import lombok.Data;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Pensum.findAll", query = "SELECT p FROM Pensum p")
-    , @NamedQuery(name = "Pensum.findById", query = "SELECT p FROM Pensum p WHERE p.id = :id")
-    , @NamedQuery(name = "Pensum.findByValue", query = "SELECT p FROM Pensum p WHERE p.value = :value")})
+    , @NamedQuery(name = "Pensum.findByCodigo", query = "SELECT p FROM Pensum p WHERE p.codigo = :codigo")
+    , @NamedQuery(name = "Pensum.findByNombrePrograma", query = "SELECT p FROM Pensum p WHERE p.nombrePrograma = :nombrePrograma")
+    , @NamedQuery(name = "Pensum.findByVersion", query = "SELECT p FROM Pensum p WHERE p.version = :version")})
 public class Pensum implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "codigo")
+    private Long codigo;
     @Size(max = 255)
-    @Column(name = "value", length = 255)
-    private String value;
+    @Column(name = "nombre_programa")
+    private String nombrePrograma;
+    @Column(name = "version")
+    private Long version;
 
     public Pensum() {
     }
 
-    public Pensum(Long id) {
-        this.id = id;
+    public Pensum(Long codigo) {
+        this.codigo = codigo;
     }
 
 }
