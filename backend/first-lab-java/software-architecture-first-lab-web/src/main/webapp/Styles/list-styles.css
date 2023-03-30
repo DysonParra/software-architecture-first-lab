@@ -1,0 +1,39 @@
+
+body {
+    background-color: #4e56c7 !important;
+ }
+ .test {
+     background-color: rgb(255, 255, 255);
+     color: rgb(0, 4, 255) !important;
+     
+ }
+ .link {
+     background-color: white;
+     color:rgb(0, 4, 255);
+     text-decoration-color: rgb(0, 4, 255);
+ }
+
+ .ui-widget-content a {
+     color: rgb(0, 4, 255) !important;
+ }
+
+ .titlePage {
+     text-align: center;
+     color:white;
+ }
+
+ .buttons {
+     background-color: #ffffff !important;
+     border: none;
+     color: rgb(0, 4, 255);
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin-top: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
