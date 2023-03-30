@@ -3,7 +3,7 @@
               xmlns="http://xmlns.jcp.org/xml/ns/javaee"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-    
+
     <managed-bean>
         <managed-bean-name>homologacionesMBean</managed-bean-name>
         <managed-bean-class>com.project.dev.controller.HomologacionesMBean</managed-bean-class>
@@ -118,7 +118,7 @@
             <to-view-id>/ComiteAsuntosEstudiantilesList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/EstudianteList.xhtml</from-view-id>
         <navigation-case>
@@ -141,7 +141,7 @@
             <to-view-id>/EstudianteList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/JefeList.xhtml</from-view-id>
         <navigation-case>
@@ -164,7 +164,7 @@
             <to-view-id>/JefeList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/MateriaList.xhtml</from-view-id>
         <navigation-case>
@@ -187,7 +187,7 @@
             <to-view-id>/MateriaList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/PensumList.xhtml</from-view-id>
         <navigation-case>
@@ -210,7 +210,7 @@
             <to-view-id>/PensumList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/SolicitudesList.xhtml</from-view-id>
         <navigation-case>
@@ -233,7 +233,7 @@
             <to-view-id>/SolicitudesList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
+
     <navigation-rule>
         <from-view-id>/UsersList.xhtml</from-view-id>
         <navigation-case>

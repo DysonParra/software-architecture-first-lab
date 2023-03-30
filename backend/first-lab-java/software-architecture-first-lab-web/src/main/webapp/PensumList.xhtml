@@ -4,26 +4,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-    
-    
-    <style type="text/css">
-            .old{
-               background-color: #6CE26C !important;
-               background-image: none !important;
-               color: #000000 !important;
-            }
-    </style>
-    
-    
-    
     <h:head>
-        <title>My Form</title>
+        <title>Lista</title>
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}#{request.servletPath}/styles/list-styles.css" />
     </h:head>
     <h:body>
         <f:view>
             <h:form>
-                <h1><h:outputText value="PENSUM LIST"/></h1>
-                <h:commandButton id="back" value="Back" action="#{homologacionesMBean.showIndex()}"/>
+                <h:commandButton class="buttons" id="back" value="Atrás" action="#{homologacionesMBean.showIndex()}"/>
+            </h:form>
+            <h:form>
+                <h1 class="titlePage"><h:outputText  value="Lista de pensum"/></h1>
                 <p:dataTable value="#{homologacionesMBean.pensumList}" var="item"
                              paginator="true"
                              rows="3"
@@ -36,33 +27,38 @@
                              emptyMessage="No hay datos"
                              widgetVar="pensumTable"
                              >
-                    
-                    <p:column headerText="Id"
-                              sortBy="#{item.id}"
-                              filterBy="#{item.id}"
+
+                    <p:column headerText="Codigo"
+                              sortBy="#{item.codigo}"
+                              filterBy="#{item.codigo}"
                               filterMatchMode="contains"
+                              class="test"
                               >
                         <h:commandLink action="#{homologacionesMBean.showPensumDetails(item)}"
-                                      value="#{item.id}" />
-                                      
+                                      value="#{item.codigo}" class="link"/>
                     </p:column>
-                    
-                    <p:column headerText="Qr Code">
-                        <p:barcode value="#{item.id} #{item.value}"
+
+                    <p:column headerText="Qr Code" class="test">
+                        <p:barcode value="#{item.codigo} #{item.nombrePrograma}"
                                    type="qr" height="110px" width="110px" />
-                    </p:column>               
-                        
-                    
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Value"/>
-                        </f:facet>
-                        <h:outputText value="#{item.value}"/>
                     </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="NombrePrograma"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombrePrograma}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="Version"/>
+                        </f:facet>
+                        <h:outputText value="#{item.version}" class="test"/>
+                    </p:column>
+
                 </p:dataTable>
             </h:form>
         </f:view>
-        
     </h:body>
 </html>
-

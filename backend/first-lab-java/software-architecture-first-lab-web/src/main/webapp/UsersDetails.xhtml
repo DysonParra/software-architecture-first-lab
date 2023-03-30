@@ -6,36 +6,41 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>My Form</title>
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}#{request.servletPath}/styles/details-styles.css" />
     </h:head>
     <h:body>
-        USERS DETAILS
-        
         <f:view>
-
-
             <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
-                <p:panelGrid columns="2">
-                    <p:outputLabel value="Email:" for="email" />
-                    <p:inputText id="email" value="#{homologacionesMBean.usersDetails.email}" title="Email" required="true" requiredMessage="The Id field is required."/>
-                    <p:outputLabel value="Password:" for="password" />
-                    <p:inputText id="password" value="#{homologacionesMBean.usersDetails.password}" title="Password" />
-                </p:panelGrid>
-                
-                <h2>Primefaces captcha</h2>
-                <p:messages id="msg"/>
-                <p:captcha id="captcha"></p:captcha>
-                <br/>
-                <h:commandButton id="update" value="Update" action="#{homologacionesMBean.updateUsers()}"/>
+                <p:commandButton class="buttons" id="back" value="Atrás"
+                    action="#{homologacionesMBean.showUsersList()}" />
             </h:form>
+            <h1 class="titlePage">Detalle Users</h1>
             <h:form>
-                <br/>
-                <h:commandButton id="back" value="Back" action="#{homologacionesMBean.showUsersList()}"/>
+                <p>
+                    <label for="email">Email:</label>
+                    <p:outputLabel for="email">
+                        <p:inputText id="email" value="#{homologacionesMBean.usersDetails.email}" required="true"
+                            requiredMessage="The Email field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <p:outputLabel for="password">
+                        <p:inputText id="password" value="#{homologacionesMBean.usersDetails.password}" required="false"
+                            requiredMessage="The Password field is required." />
+                    </p:outputLabel>
+                </p>
+                <div class="divUpdate">
+                    <p>
+                        <p:messages id="msg" />
+                        <p:captcha id="captcha"></p:captcha>
+                    </p>
+                    <h:commandButton class="buttons" id="update" value="Update"
+                        action="#{homologacionesMBean.updateUsers()}" />
+                    <br />
+                </div>
             </h:form>
         </f:view>
-
-        
-        
     </h:body>
 </html>
 

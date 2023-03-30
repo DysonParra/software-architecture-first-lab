@@ -11,7 +11,8 @@
     <h:body>
         <f:view>
             <h:form>
-                <p:commandButton class="buttons" id="back" value="Atrás" action="#{homologacionesMBean.showSolicitudesList()}"/>
+                <p:commandButton class="buttons" id="back" value="Atrás"
+                    action="#{homologacionesMBean.showSolicitudesList()}" />
             </h:form>
             <h1 class="titlePage">Detalle de Solicitud</h1>
             <h:form>
@@ -20,37 +21,37 @@
                     <p:outputLabel for="title">
                         <p:inputText id="title" value="#{homologacionesMBean.solicitudesDetails.title}" required="true"
                             requiredMessage="The Title field is required." />
-                        </p:outputLabel>
-                        </p>
-                        <p>
-                            <label for="solicitante">Nombre del solicitante:</label>
-                            <p:outputLabel for="solicitante">
-                                <p:inputText id="solicitante" value="#{homologacionesMBean.solicitudesDetails.student}" required="true"
-                                    requiredMessage="El campo Nombre del solicitante es requerido." />
-                            </p:outputLabel>
-                        </p>
-                        <p>
-                            <label for="justificacion">Justificación:</label>
-                            <p:outputLabel for="justificacion">
-                                <p:inputText id="justificacion" value="#{homologacionesMBean.solicitudesDetails.justification}"
-                                    required="true" requiredMessage="El campo Justificación es requerido." />
-                            </p:outputLabel>
-                        </p>
-                        <p>
-                            <label for="estado">Estado:</label>
-                            <p:outputLabel for="estado">
-                                <p:inputText id="estado" value="#{homologacionesMBean.solicitudesDetails.status}" type="text"
-                                    required="true" requiredMessage="El campo Estado es requerido." />
-                            </p:outputLabel>
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="solicitante">Nombre del solicitante:</label>
+                    <p:outputLabel for="solicitante">
+                        <p:inputText id="solicitante" value="#{homologacionesMBean.solicitudesDetails.student}"
+                            required="true" requiredMessage="El campo Nombre del solicitante es requerido." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="justificacion">Justificación:</label>
+                    <p:outputLabel for="justificacion">
+                        <p:inputText id="justificacion" value="#{homologacionesMBean.solicitudesDetails.justification}"
+                            required="true" requiredMessage="El campo Justificación es requerido." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="estado">Estado:</label>
+                    <p:outputLabel for="estado">
+                        <p:inputText id="estado" value="#{homologacionesMBean.solicitudesDetails.status}" type="text"
+                            required="true" requiredMessage="El campo Estado es requerido." />
+                    </p:outputLabel>
                 </p>
                 <div class="divUpdate">
                     <p>
-                        <p:messages id="msg"/>
+                        <p:messages id="msg" />
                         <p:captcha id="captcha"></p:captcha>
                     </p>
-                    
-                    <h:commandButton class="buttons" id="update" value="Update" action="#{homologacionesMBean.updateSolicitudes()}"/>
-                    <br/>
+                    <h:commandButton class="buttons" id="update" value="Update"
+                        action="#{homologacionesMBean.updateSolicitudes()}" />
+                    <br />
                 </div>
             </h:form>
         </f:view>
