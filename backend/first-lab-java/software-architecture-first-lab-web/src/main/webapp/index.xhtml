@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      <style type="text/css">
+        body{
+           background-color: #4e56c7 !important;
+        }
+
+        .buttons{
+            background-color: #ffffff !important;
+            border: none;
+            color: rgb(0, 4, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tableButtons{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+</style>
+    <head>
+        <title>HOMOLOGACIONES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div class="tableButtons">
+            <h:form>
+                <h:dataTable class="tableButtons" value="" var="item">
+                    <h:column>
+                      <f:facet name="header">
+                        <h:outputText value="" />
+                      </f:facet>
+                      <h:commandButton class="buttons"  id="administrador" value="Administrador" action="#{homologacionesMBean.showAdministradorList()}"/>
+                      <h:commandButton class="buttons" id="comiteAsuntosEstudiantiles" value="Asuntos Estudiantiles" action="#{homologacionesMBean.showComiteAsuntosEstudiantilesList()}"/>
+                      <h:commandButton class="buttons" id="estudiante" value="Estudiante" action="#{homologacionesMBean.showEstudianteList()}"/>
+                    </h:column>
+                    <h:column>
+                      <f:facet name="header">
+                        <h:outputText value="" />
+                      </f:facet>
+                      <h:commandButton class="buttons" id="jefe" value="Jefe" action="#{homologacionesMBean.showJefeList()}"/>
+                      <h:commandButton  class="buttons" id="materia" value="Materia" action="#{homologacionesMBean.showMateriaList()}"/>
+                      <h:commandButton  class="buttons" id="pensum" value="Pensum" action="#{homologacionesMBean.showPensumList()}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                          <h:outputText value="" />
+                        </f:facet>
+                        <h:commandButton  class="buttons" id="profesor" value="Profesor" action="#{homologacionesMBean.showProfesorList()}"/>
+                        <h:commandButton  class="buttons" id="users" value="Users" action="#{homologacionesMBean.showUsersList()}"/>
+                        <h:commandButton  class="buttons" id="solicitudes" value="Solicitudes" action="#{homologacionesMBean.showSolicitudesList()}"/>
+                      </h:column>
+                  </h:dataTable>   
+            </h:form>
+        </div>
+    </body>
+</html>

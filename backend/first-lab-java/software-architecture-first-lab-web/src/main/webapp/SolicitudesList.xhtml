@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <style type="text/css">
+        body {
+           background-color: #4e56c7 !important;
+        }
+        .test {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 4, 255) !important;
+            
+        }
+        .link {
+            background-color: white;
+            color:rgb(0, 4, 255);
+            text-decoration-color: rgb(0, 4, 255);
+        }
+
+        .ui-widget-content a {
+            color: rgb(0, 4, 255) !important;
+        }
+
+        .titlePage {
+            text-align: center;
+            color:white;
+        }
+
+        .buttons {
+            background-color: #ffffff !important;
+            border: none;
+            color: rgb(0, 4, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    
+    <h:head>
+        <title>Homologaciones</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:commandButton class="buttons" id="back" value="Atrás" action="#{homologacionesMBean.showIndex()}"/>
+            </h:form>
+            <h:form>
+                <h1 class="titlePage"><h:outputText  value="Lista de solicitudes"/></h1>
+                <p:dataTable value="#{homologacionesMBean.solicitudesList}" var="item"
+                             paginator="true"
+                             rows="3"
+                             scrollable="true"
+                             scrollWidth="100%"
+                             scrollHeight="550"
+                             rendered="true"
+                             resizableColumns="true"
+                             sortMode="true"
+                             emptyMessage="No hay datos"
+                             widgetVar="solicitudesTable"
+                             >
+                    
+                    <p:column headerText="Id"
+                              sortBy="#{item.id}"
+                              filterBy="#{item.id}"
+                              filterMatchMode="contains"
+                              class="test"
+                              >
+                        <h:commandLink action="#{homologacionesMBean.showSolicitudesDetails(item)}"
+                                      value="#{item.id}" class="link"/>
+                                      
+                    </p:column>
+                    
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="Title"/>
+                        </f:facet>
+                        <h:outputText value="#{item.title}" class="test"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+        
+    </h:body>
+</html>
+

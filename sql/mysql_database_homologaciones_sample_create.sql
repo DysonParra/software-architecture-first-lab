@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`password`						VARCHAR(255)			NULL DEFAULT NULL
 ); 
 
-CREATE TABLE IF NOT EXISTS `homologations` (
+CREATE TABLE IF NOT EXISTS `solicitudes` (
 	`id`							BIGINT				NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	`title`							VARCHAR(50)				NULL DEFAULT NULL,
 	`student`						VARCHAR(100)			NULL DEFAULT NULL,
