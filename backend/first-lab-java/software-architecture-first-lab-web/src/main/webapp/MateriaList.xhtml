@@ -45,6 +45,13 @@
 
                     <p:column class="test">
                         <f:facet name="header">
+                            <h:outputText value="CantidadCreditos"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cantidadCreditos}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
                             <h:outputText value="Nombre"/>
                         </f:facet>
                         <h:outputText value="#{item.nombre}" class="test"/>
@@ -52,9 +59,16 @@
 
                     <p:column class="test">
                         <f:facet name="header">
-                            <h:outputText value="Version"/>
+                            <h:outputText value="Prerequisito"/>
                         </f:facet>
-                        <h:outputText value="#{item.version}" class="test"/>
+                        <h:outputText value="#{item.prerequisito}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="Correquisito"/>
+                        </f:facet>
+                        <h:outputText value="#{item.correquisito}" class="test"/>
                     </p:column>
 
                 </p:dataTable>

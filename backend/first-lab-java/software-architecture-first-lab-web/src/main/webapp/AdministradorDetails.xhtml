@@ -17,10 +17,10 @@
             <h1 class="titlePage">Detalle Administrador</h1>
             <h:form>
                 <p>
-                    <label for="codigo">Codigo:</label>
-                    <p:outputLabel for="codigo">
-                        <p:inputText id="codigo" value="#{homologacionesMBean.administradorDetails.codigo}" required="true"
-                            requiredMessage="The Codigo field is required." />
+                    <label for="cedula">Cedula:</label>
+                    <p:outputLabel for="cedula">
+                        <p:inputText id="cedula" value="#{homologacionesMBean.administradorDetails.cedula}" required="true"
+                            requiredMessage="The Cedula field is required." />
                     </p:outputLabel>
                 </p>
                 <p>
@@ -31,10 +31,31 @@
                     </p:outputLabel>
                 </p>
                 <p>
-                    <label for="version">Version:</label>
-                    <p:outputLabel for="version">
-                        <p:inputText id="version" value="#{homologacionesMBean.administradorDetails.version}" required="false"
-                            requiredMessage="The Version field is required." />
+                    <label for="apellido">Apellido:</label>
+                    <p:outputLabel for="apellido">
+                        <p:inputText id="apellido" value="#{homologacionesMBean.administradorDetails.apellido}" required="false"
+                            requiredMessage="The Apellido field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="correoInstitucional">CorreoInstitucional:</label>
+                    <p:outputLabel for="correoInstitucional">
+                        <p:inputText id="correoInstitucional" value="#{homologacionesMBean.administradorDetails.correoInstitucional}" required="false"
+                            requiredMessage="The CorreoInstitucional field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="correoPersonal">CorreoPersonal:</label>
+                    <p:outputLabel for="correoPersonal">
+                        <p:inputText id="correoPersonal" value="#{homologacionesMBean.administradorDetails.correoPersonal}" required="false"
+                            requiredMessage="The CorreoPersonal field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="telefono">Telefono:</label>
+                    <p:outputLabel for="telefono">
+                        <p:inputText id="telefono" value="#{homologacionesMBean.administradorDetails.telefono}" required="false"
+                            requiredMessage="The Telefono field is required." />
                     </p:outputLabel>
                 </p>
                 <div class="divUpdate">

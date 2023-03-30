@@ -28,33 +28,33 @@
                              widgetVar="comiteAsuntosEstudiantilesTable"
                              >
 
-                    <p:column headerText="Codigo"
-                              sortBy="#{item.codigo}"
-                              filterBy="#{item.codigo}"
+                    <p:column headerText="Id"
+                              sortBy="#{item.id}"
+                              filterBy="#{item.id}"
                               filterMatchMode="contains"
                               class="test"
                               >
                         <h:commandLink action="#{homologacionesMBean.showComiteAsuntosEstudiantilesDetails(item)}"
-                                      value="#{item.codigo}" class="link"/>
+                                      value="#{item.id}" class="link"/>
                     </p:column>
 
                     <p:column headerText="Qr Code" class="test">
-                        <p:barcode value="#{item.codigo} #{item.nombre}"
+                        <p:barcode value="#{item.id} #{item.correoInstitucional}"
                                    type="qr" height="110px" width="110px" />
                     </p:column>
 
                     <p:column class="test">
                         <f:facet name="header">
-                            <h:outputText value="Nombre"/>
+                            <h:outputText value="CorreoInstitucional"/>
                         </f:facet>
-                        <h:outputText value="#{item.nombre}" class="test"/>
+                        <h:outputText value="#{item.correoInstitucional}" class="test"/>
                     </p:column>
 
                     <p:column class="test">
                         <f:facet name="header">
-                            <h:outputText value="Version"/>
+                            <h:outputText value="telefono"/>
                         </f:facet>
-                        <h:outputText value="#{item.version}" class="test"/>
+                        <h:outputText value="#{item.telefono}" class="test"/>
                     </p:column>
 
                 </p:dataTable>

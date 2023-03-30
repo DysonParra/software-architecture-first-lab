@@ -28,18 +28,18 @@
                              widgetVar="estudianteTable"
                              >
 
-                    <p:column headerText="Codigo"
-                              sortBy="#{item.codigo}"
-                              filterBy="#{item.codigo}"
+                    <p:column headerText="Cedula"
+                              sortBy="#{item.cedula}"
+                              filterBy="#{item.cedula}"
                               filterMatchMode="contains"
                               class="test"
                               >
                         <h:commandLink action="#{homologacionesMBean.showEstudianteDetails(item)}"
-                                      value="#{item.codigo}" class="link"/>
+                                      value="#{item.cedula}" class="link"/>
                     </p:column>
 
                     <p:column headerText="Qr Code" class="test">
-                        <p:barcode value="#{item.codigo} #{item.nombre}"
+                        <p:barcode value="#{item.cedula} #{item.nombre}"
                                    type="qr" height="110px" width="110px" />
                     </p:column>
 
@@ -52,9 +52,44 @@
 
                     <p:column class="test">
                         <f:facet name="header">
-                            <h:outputText value="Version"/>
+                            <h:outputText value="Apellido"/>
                         </f:facet>
-                        <h:outputText value="#{item.version}" class="test"/>
+                        <h:outputText value="#{item.apellido}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="CorreoInstitucional"/>
+                        </f:facet>
+                        <h:outputText value="#{item.correoInstitucional}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="CorreoPersonal"/>
+                        </f:facet>
+                        <h:outputText value="#{item.correoPersonal}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="Telefono"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telefono}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="FechaIngreso"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaIngreso}" class="test"/>
+                    </p:column>
+
+                    <p:column class="test">
+                        <f:facet name="header">
+                            <h:outputText value="Estrato"/>
+                        </f:facet>
+                        <h:outputText value="#{item.estrato}" class="test"/>
                     </p:column>
 
                 </p:dataTable>

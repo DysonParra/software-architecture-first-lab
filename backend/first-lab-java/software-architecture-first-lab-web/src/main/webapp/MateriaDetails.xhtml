@@ -24,6 +24,13 @@
                     </p:outputLabel>
                 </p>
                 <p>
+                    <label for="cantidadCreditos">CantidadCreditos:</label>
+                    <p:outputLabel for="cantidadCreditos">
+                        <p:inputText id="cantidadCreditos" value="#{homologacionesMBean.materiaDetails.cantidadCreditos}" required="false"
+                            requiredMessage="The CantidadCreditos field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
                     <label for="nombre">Nombre:</label>
                     <p:outputLabel for="nombre">
                         <p:inputText id="nombre" value="#{homologacionesMBean.materiaDetails.nombre}" required="false"
@@ -31,10 +38,17 @@
                     </p:outputLabel>
                 </p>
                 <p>
-                    <label for="version">Version:</label>
-                    <p:outputLabel for="version">
-                        <p:inputText id="version" value="#{homologacionesMBean.materiaDetails.version}" required="false"
-                            requiredMessage="The Version field is required." />
+                    <label for="prerequisito">Prerequisito:</label>
+                    <p:outputLabel for="prerequisito">
+                        <p:inputText id="prerequisito" value="#{homologacionesMBean.materiaDetails.prerequisito}" required="false"
+                            requiredMessage="The Prerequisito field is required." />
+                    </p:outputLabel>
+                </p>
+                <p>
+                    <label for="correquisito">Correquisito:</label>
+                    <p:outputLabel for="correquisito">
+                        <p:inputText id="correquisito" value="#{homologacionesMBean.materiaDetails.correquisito}" required="false"
+                            requiredMessage="The Correquisito field is required." />
                     </p:outputLabel>
                 </p>
                 <div class="divUpdate">
